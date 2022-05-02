@@ -1,0 +1,4 @@
+1. Create Next App
+   1. npx create-next-app
+   2. add layout component
+   3. add header, main and footer
