@@ -1,26 +1,27 @@
-import { AppBar, Container ,Typography } from '@mui/material'
+import { AppBar, Container, Typography } from '@mui/material'
 import Head from 'next/head'
-import React from 'react'
+import useStyles from '../utils/styles';
 
-const Layout = ({children}) => {
-  return (
-    <div>
-        <Head>
-            <title>MyShop</title>
-        </Head>
-        <AppBar position="static">
-            <Typography>mySHop</Typography>
-        </AppBar>
+const Layout = ({ children }) => {
+    const classes = useStyles();
+    return (
+        <div>
+            <Head>
+                <title>MyShop</title>
+            </Head>
+            <AppBar position="static" className={classes.navbar}>
+                <Typography>mySHop</Typography>
+            </AppBar>
 
-        <Container>
-            {children}
-        </Container>
+            <Container className={classes.main}>
+                {children}
+            </Container>
 
-        <footer>
-            <Typography>All rights reserved. MyShop.</Typography>
-        </footer>
-    </div>
-  )
+            <footer className={classes.footer}>
+                <Typography>All rights reserved. MyShop.</Typography>
+            </footer>
+        </div>
+    )
 }
 
 export default Layout
